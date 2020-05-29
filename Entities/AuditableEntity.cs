@@ -11,5 +11,5 @@ namespace OnlineStore.Entities
 
             public DateTime? ModifiedAt { get; set; }
         }
-    }
+    
 }
