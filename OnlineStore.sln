@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore", "OnlineStore\OnlineStore.csproj", "{1A1761EE-9992-40FF-A90B-3A0C25C59EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore", "OnlineStore\OnlineStore.csproj", "{1A1761EE-9992-40FF-A90B-3A0C25C59EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{3635C969-D1A9-4858-869A-903AF6875554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1A1761EE-9992-40FF-A90B-3A0C25C59EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1761EE-9992-40FF-A90B-3A0C25C59EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1761EE-9992-40FF-A90B-3A0C25C59EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3635C969-D1A9-4858-869A-903AF6875554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3635C969-D1A9-4858-869A-903AF6875554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3635C969-D1A9-4858-869A-903AF6875554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3635C969-D1A9-4858-869A-903AF6875554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
