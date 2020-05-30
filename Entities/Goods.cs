@@ -8,11 +8,13 @@ namespace OnlineStore.Entities
     {
         public string Name { get; set; }
         public float Price { get; set; }
+        public bool Available { get; set; }
 
-        public Goods(string name, float price)
+        public Goods(string name, float price, bool available)
         {
             Name = name;
             Price = price;
+            Available = available;
         }
 
         //Для EF Core
