@@ -15,8 +15,9 @@ namespace Infrastructure.DataAccess
         }
 
         public DbSet<Client> Client { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Goods> Goods { get; set; }
 
-        
 
     }
 }
