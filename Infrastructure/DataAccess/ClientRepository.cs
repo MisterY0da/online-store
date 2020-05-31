@@ -17,11 +17,6 @@ namespace Infrastructure.DataAccess
                 _dbContext = dbContext;
             }
 
-            public override Client Get(int id)
-            {
-                return _dbContext.Clients.FirstOrDefault(c => c.Id == id);
-            }
-
             public IReadOnlyList<Client> GetClientByFirstName(string firstName)
             {
                 return _dbContext.Clients.Where(x => x.FirstName.ToLower().Contains(firstName.ToLower())).ToList();
