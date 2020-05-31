@@ -14,5 +14,5 @@ namespace Infrastructure.DataAccess
         IReadOnlyList<Client> GetClientByLastName(string lastName);
         IReadOnlyList<Client> GetClientByFirstName(string firstName);
     
-}
+    }
 }
