@@ -30,6 +30,7 @@ namespace OnlineStore.Entities
             MiddleName = middleName;
         }
 
+        //For EF Core
         public Client()
         {
 

@@ -5,17 +5,18 @@ using System.Text;
 
 namespace OnlineStore.Entities
 {
-  public  class Order : AuditableEntity
-    {
+  public class Order : AuditableEntity
+  {
         //Order has goods, relationship 1 to many
-        public virtual ICollection<Goods> GoodsList { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
         public virtual Client Client { get; set; }
 
+        //For EF Core
         public Order()
         {
 
         }
 
-    }
+  }
 }
