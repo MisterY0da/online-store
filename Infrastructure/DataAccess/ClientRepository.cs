@@ -7,25 +7,22 @@ using OnlineStore.Entities;
 
 namespace Infrastructure.DataAccess
 {
-    class ClientRepository
+    public class ClientRepository : AuditableRepository<Client>, IClientRepository
     {
-        public class ClientRepository : AuditableRepository<Client>, IClientRepository
+        private readonly AppDbContext _dbContext;
+        public ClientRepository(AppDbContext dbContext) : base(dbContext)
         {
-            private readonly AppDbContext _dbContext;
-            public ClientRepository(AppDbContext dbContext) : base(dbContext)
-            {
-                _dbContext = dbContext;
-            }
+             _dbContext = dbContext;
+        }
 
-            public IReadOnlyList<Client> GetClientByFirstName(string firstName)
-            {
-                return _dbContext.Clients.Where(x => x.FirstName.ToLower().Contains(firstName.ToLower())).ToList();
-            }
+        public IReadOnlyList<Client> GetClientByFirstName(string firstName)
+        {
+            return _dbContext.Clients.Where(x => x.FirstName.ToLower().Contains(firstName.ToLower())).ToList();
+        }
 
-            public IReadOnlyList<Client> GetClientByLastName(string lastName)
-            {
-                return _dbContext.Clients.Where(x => x.LastName.ToLower().Contains(lastName.ToLower())).ToList();
-            }
+        public IReadOnlyList<Client> GetClientByLastName(string lastName)
+        {
+            return _dbContext.Clients.Where(x => x.LastName.ToLower().Contains(lastName.ToLower())).ToList();
         }
     }
 }
