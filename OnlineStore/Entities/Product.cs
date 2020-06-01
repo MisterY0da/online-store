@@ -7,14 +7,14 @@ namespace OnlineStore.Entities
    public class Product : AuditableEntity
    {
         public string Name { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
         public bool Available { get; set; }
 
-        public Product(string name, float price, bool available)
+        public Product(string name, double price)
         {
             Name = name;
             Price = price;
-            Available = available;
+            Available = true;
         }
 
         //For EF Core

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using OnlineStore.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.DataAccess
 {
@@ -13,7 +15,7 @@ namespace Infrastructure.DataAccess
             _dbContext = dbContext;
         }
 
-        IReadOnlyList<Order> GetAll()
+        public IReadOnlyList<Order> GetAll()
         {
             return _dbContext.Orders.Include(o => o.Client).ToList();
         }
