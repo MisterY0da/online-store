@@ -41,20 +41,17 @@ namespace DbConsole
             _productRepository.Add(product);
 
             var client = new Client("Max", "Payne", "Samuel");
-            
-            //Fill order with products
+            _clientRepository.Add(client);
+
             var order = new Order(client, DateTime.Now);
+
             var orderProducts = new List<Product>();
             orderProducts.Add(product);
             order.Products = orderProducts;
-            
-            //Fill client with orders
-            var clientOrders = new List<Order>();
-            clientOrders.Add(order);
-            client.Orders = clientOrders;
 
             _orderRepository.Add(order);
-            _clientRepository.Add(client);
+
+            Console.ReadLine();
         }
     }
 }
