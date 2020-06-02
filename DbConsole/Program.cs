@@ -51,7 +51,7 @@ namespace DbConsole
 
             _orderRepository.Add(order);
 
-            Console.ReadLine();
+            
         }
     }
 }
