@@ -10,8 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\HtmlClient\" />
-    <Folder Include="Views\HtmlProduct\" />
     <Folder Include="Views\HtmlOrder\" />
   </ItemGroup>
 
