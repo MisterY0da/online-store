@@ -9,19 +9,25 @@ using Infrastructure.DataAccess;
 namespace WebStore.Controllers
 {
     [Route("html/[controller]")]
-    public class HtmlProductController : Controller
+    public class HtmlOrderController : Controller
     {
-        private IProductRepository _productRepository { get; set; }
+        private IOrderRepository _orderRepository { get; set; }
 
-        public HtmlProductController(IProductRepository productRepository)
+        public HtmlOrderController(IOrderRepository orderRepository)
         {
-            _productRepository = productRepository;
+            _orderRepository = orderRepository;
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(_orderRepository.GetAll());
         }
 
         [HttpGet("{id}")]
         public ActionResult Details(int id)
         {
-            return View(_productRepository.Get(id));
+            return View(_orderRepository.Get(id));
         }
 
         [HttpGet("create")]
@@ -32,11 +38,11 @@ namespace WebStore.Controllers
 
         [HttpPost("create")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] Product product)
+        public ActionResult Create([FromForm] Order order)
         {
             try
             {
-                _productRepository.Add(product);
+                _orderRepository.Add(order);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -46,19 +52,19 @@ namespace WebStore.Controllers
             }
         }
 
-        [HttpGet("update/{id}")]
+        [HttpPost("update/{id}")]
         public ActionResult Edit(int id)
         {
-            return View(_productRepository.Get(id));
+            return View(_orderRepository.Get(id));
         }
 
         [HttpPost("update/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, [FromForm] Product product)
+        public ActionResult Edit(int id, [FromForm] Order order)
         {
             try
             {
-                _productRepository.Update(product);
+                _orderRepository.Update(order);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -66,11 +72,6 @@ namespace WebStore.Controllers
             {
                 return View();
             }
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
     }
 }
