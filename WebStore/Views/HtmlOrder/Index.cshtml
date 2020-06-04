@@ -1,0 +1,48 @@
+﻿@model IEnumerable<OnlineStore.Entities.Order>
+
+@{
+    ViewData["Title"] = "Главная - список заказов";
+}
+
+
+<h1>Список заказов</h1>
+
+<p>
+    <a asp-action="Create">Создать новый заказ</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id заказа
+            </th>
+            <th>
+                ФИО клиента
+            </th>
+            <th>
+                Время создания 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+         {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Обновить</a>
+                </td>
+            </tr>
+         }
+    </tbody>
+</table>

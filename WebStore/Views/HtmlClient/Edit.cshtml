@@ -1,4 +1,4 @@
-﻿@model OnlineStore.Entities.Product
+﻿@model OnlineStore.Entities.Client
 
 @{
     ViewData["Title"] = "Обновление клиента";
@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            @Html.HiddenFor(p => p.Id)
+            @Html.HiddenFor(c => c.Id)
             <div class="form-group">
                 <label>Имя</label>
                 <input asp-for="FirstName" class="form-control" />
