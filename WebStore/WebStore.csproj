@@ -9,9 +9,5 @@
     <ProjectReference Include="..\OnlineStore\OnlineStore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\HtmlOrder\" />
-  </ItemGroup>
-
 
 </Project>
