@@ -20,7 +20,7 @@
     "WebStore": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "html/htmlorder",
+      "launchUrl": "api/order",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

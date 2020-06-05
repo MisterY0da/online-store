@@ -12,7 +12,6 @@ namespace OnlineStore.Entities
 
         //Order has products, relationship 1 to many
         public virtual ICollection<Product> Products { get; set; }
-
         public Order(Client client, DateTime createdAt)
         {
             Client = client;
