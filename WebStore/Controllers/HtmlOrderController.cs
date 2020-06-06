@@ -52,7 +52,7 @@ namespace WebStore.Controllers
             }
         }
 
-        [HttpPost("update/{id}")]
+        [HttpGet("update/{id}")]
         public ActionResult Edit(int id)
         {
             return View(_orderRepository.Get(id));
