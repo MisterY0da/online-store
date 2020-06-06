@@ -18,6 +18,12 @@
                 Id заказа
             </th>
             <th>
+                Наименование товара
+            </th>
+            <th>
+                Цена товара
+            </th>
+            <th>
                 ФИО клиента
             </th>
             <th>
@@ -35,6 +41,12 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Client.Name)

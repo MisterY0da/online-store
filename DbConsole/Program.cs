@@ -37,21 +37,15 @@ namespace DbConsole
         {
             Console.WriteLine("Let's begin!");
 
-            var product = new Product("knife", 345.78);
+            var product = new Product("doll", 200);
             _productRepository.Add(product);
 
-            var client = new Client("Max", "Payne", "Samuel");
+            var client = new Client("Lara", "Croft", "Tobias");
             _clientRepository.Add(client);
 
-            var order = new Order(client, DateTime.Now);
+            var order = new Order(client, product, DateTime.Now);
 
-            var orderProducts = new List<Product>();
-            orderProducts.Add(product);
-            order.Products = orderProducts;
-
-            _orderRepository.Add(order);
-
-            
+            _orderRepository.Add(order);  
         }
     }
 }

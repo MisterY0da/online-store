@@ -17,7 +17,7 @@ namespace Infrastructure.DataAccess
 
         public IReadOnlyList<Order> GetAll()
         {
-            return _dbContext.Orders.Include(o => o.Client).Include(o => o.Products).ToList();
+            return _dbContext.Orders.Include(o => o.Client).Include(o => o.Product).ToList();
         }
 
         public override Order Get(int id)
