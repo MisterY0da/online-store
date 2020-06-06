@@ -21,7 +21,10 @@
                 ФИО клиента
             </th>
             <th>
-                Время создания 
+                Время создания
+            </th>
+            <th>
+                Время изменения
             </th>
             <th></th>
         </tr>
@@ -29,20 +32,23 @@
     <tbody>
         @foreach (var item in Model)
          {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Client.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedAt)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Обновить</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Обновить</a>
+            </td>
+        </tr>
          }
     </tbody>
 </table>

@@ -1,13 +1,13 @@
 ﻿@model OnlineStore.Entities.Order
 
 @{
-    ViewData["Title"] = "Обновление";
+    ViewData["Title"] = "Обновление заказа";
 }
 
 
 <h1>Обновление</h1>
 
-<h4>Товар</h4>
+<h4>Заказ</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,6 +24,10 @@
             <div class="form-group">
                 <label>Отчество</label>
                 <input asp-for="Client.MiddleName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Время изменения</label>
+                <input asp-for="ModifiedAt" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Обновить" class="btn btn-primary" />
