@@ -52,7 +52,10 @@
                 @Html.DisplayFor(modelItem => item.Client.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
+                @if(!item.CreatedAt.Year.Equals(0001))
+                {
+                  @Html.DisplayFor(modelItem => item.CreatedAt)                
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ModifiedAt)
